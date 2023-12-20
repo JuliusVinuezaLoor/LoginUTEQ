@@ -38,7 +38,7 @@ public class MainActivity extends AppCompatActivity implements Asynchtask {
     }
     @Override
     public void processFinish(String result) throws JSONException {
-        ///Validacion
+        ///Validacion de autenticacion
         if(result.equals("Login Correcto!")){
             enviar(result);
         }else {
