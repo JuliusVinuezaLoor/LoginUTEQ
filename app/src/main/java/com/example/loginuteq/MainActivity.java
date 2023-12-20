@@ -7,6 +7,7 @@ import android.os.Bundle;
 import android.view.View;
 import android.widget.EditText;
 import android.widget.TextView;
+import android.widget.Toast;
 
 import com.example.loginuteq.WebServices.Asynchtask;
 import com.example.loginuteq.WebServices.WebService;
@@ -37,8 +38,13 @@ public class MainActivity extends AppCompatActivity implements Asynchtask {
     }
     @Override
     public void processFinish(String result) throws JSONException {
-
+        ///Validacion
+        if(result.equals("Login Correcto!")){
             enviar(result);
+        }else {
+            Toast.makeText(this, "Error de autenticación", Toast.LENGTH_SHORT).show();
+        }
+
     }
 
     private void enviar(String info) {
